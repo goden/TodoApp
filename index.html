@@ -9,28 +9,26 @@
 </head>
 <body>
 <body>
-  <!--
-    1. 清空 div，並給它 ID：
-       這區塊是要印出 hello, world 的地方，
-       加入 ID 讓 React 可以抓到該元素
-  -->
+
   <div id="app"></div>
 
-  <!-- 略: react.js, react-dom.js, browser.js -->
-
-  <!--
-    2. 加入 script，並指定 `type=text/babel`：
-       這區塊是我們編寫主要程式的地方。
-
-       因為我們用的是 JSX 語法，而非瀏覽器認識的 ES5 語法，
-       透過 Babel 可以將 JSX/ES6/ES7 轉譯成 ES5；
-       所以需要指定 type，讓瀏覽器先將這段程式轉交給 Babel 處理
-  -->
   <script type="text/babel">
-    // 3. 使用 ReactDOM.render()：
-    //    讓 `<h1>hello, world</h1>` 顯示在 `<div id="app">` 中
+	const text = 'hello world!';
+	const texts = [
+		<div>1</div>,
+		<div>2</div>,
+		<div>3</div>
+	];
+
+	const numbers = [1,2,3,4,5];
+
     ReactDOM.render(
-      <h1>hello, world</h1>,
+      <div>
+      	<small>Hello world</small>
+      	<div>{text}</div>
+      	<div>{texts}</div>
+      	<div>{numbers.map(n => <small>{n}</small>)}</div>
+      </div>,
       document.getElementById('app')
     );
   </script>
