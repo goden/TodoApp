@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>TodoApp</title>
+	<title>完成第一個React元件</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react-dom.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
@@ -10,9 +10,12 @@
 <body>
 <body>
 
-  <div id="app"></div>
-
-  <script type="text/babel">
+  	<div id="app"></div>
+  	<script>
+  		window.App = {};
+  	</script>
+	<script type="text/babel" src="./TodoApp.js"></script>
+  	<script type="text/babel">
 	const text = 'hello world!';
 	const texts = [
 		<div>1</div>,
@@ -22,16 +25,13 @@
 
 	const numbers = [1,2,3,4,5];
 
+	const { TodoApp } = window.App;
+	
     ReactDOM.render(
-      <div>
-      	<small>Hello world</small>
-      	<div>{text}</div>
-      	<div>{texts}</div>
-      	<div>{numbers.map(n => <small>{n}</small>)}</div>
-      </div>,
+      <TodoApp />,
       document.getElementById('app')
     );
-  </script>
+  	</script>
 </body>
 </body>
 </html>
