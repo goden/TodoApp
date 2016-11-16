@@ -1,6 +1,19 @@
+const {
+	TodoHeader,
+	TodoList,
+	InputField
+} = window.App;
+
+
 class TodoApp extends React.Component {
 	render() {
-		return <div>TodoApp</div>
+		return 	(
+			<div>
+				<TodoHeader />
+				<InputField />
+				<TodoList />
+			</div>
+		);
 	}
 }
 
