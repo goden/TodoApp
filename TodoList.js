@@ -1,6 +1,20 @@
+const { TodoItem } = window.App;
+
 class TodoList extends React.Component {
 	render() {
-		return <div>TodoList</div>
+		return (
+			<ul>
+				<li>
+					<TodoItem />
+				</li>
+				<li>
+					<TodoItem />
+				</li>
+				<li>
+					<TodoItem />
+				</li>
+			</ul>
+		)
 	}
 }
 

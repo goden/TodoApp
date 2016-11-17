@@ -1,6 +1,8 @@
 class InputField extends React.Component {
 	render() {
-		return <div>InputField</div>
+		return (
+			<input type="text" placeholder="新增待辦項目" />
+		)
 	}
 }
 
