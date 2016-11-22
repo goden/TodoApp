@@ -37,7 +37,7 @@ class TodoItem extends React.Component {
 		return (
 				<div>
 					<input type="checkbox" checked={complete} />
-					<span onClick={this.toggleEditMode}>{title}</span>
+					<span onDoubleClick={this.toggleEditMode}>{title}</span>
 					<button>X</button>
 				</div>
 		);
