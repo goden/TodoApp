@@ -14,6 +14,8 @@ class TodoItem extends React.Component {
 
 	// 更新元件狀態來初換模式
 	toggleEditMode() {
+
+		// 使用setState()來更新state，亦可在更新當下觸發事件
 		this.setState({editable: !this.state.editable});
 	}
 
@@ -48,7 +50,7 @@ class TodoItem extends React.Component {
 				<InputField
 					autoFocus
 					placeholder="編輯待辦事項"
-					value={this.props.title}
+					defaultValue={this.props.title}
 					onBlur={this.toggleEditMode}
 					onKeyDown={(e) => {
 							if (e.keyCode === 27) {
