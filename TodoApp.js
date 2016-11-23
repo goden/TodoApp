@@ -41,6 +41,9 @@ class TodoApp extends React.Component {
 				<InputField placeholder="新增待辦事項" />
 				<TodoList
 					todos={todos}
+					onToggleTodo={(id, complete) => this.setState({
+						todos: _toggleTodo(todos, id, complete)
+					})}
 					onDeleteTodo={(id) => this.setState({
 						todos: _deleteTodo(todos, id)
 					})}
@@ -48,6 +51,14 @@ class TodoApp extends React.Component {
 			</div>
 		);
 	}
+}
+
+const _toggleTodo = (todos, id, complete) => {
+	const target = todos.find((todo) => todo.id === id);
+	if (target) {
+		target.complete = complete;
+	}
+	return todos;
 }
 
 const _deleteTodo = (todos, id) => {
