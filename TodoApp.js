@@ -38,7 +38,12 @@ class TodoApp extends React.Component {
 				title="我的待辦清單"
 				username="Goden"
 				todoCount={todos.filter((todo) => !todo.complete).length} />
-				<InputField placeholder="新增待辦事項" />
+				<InputField
+					placeholder="新增待辦事項"
+					onSubmitEditing={(title) => this.setState({
+						todos: _createTodo(todos, title)
+					})}
+				/>
 				<TodoList
 					todos={todos}
 					onToggleTodo={(id, complete) => this.setState({
@@ -52,6 +57,15 @@ class TodoApp extends React.Component {
 		);
 	}
 }
+
+const _createTodo = (todos, title) => {
+	todos.push({
+		id: todos[todos.length - 1].id + 1,
+		title,		// In ES6, this will transform 'title: title'
+		complete: false
+	});
+	return todos;
+};
 
 const _toggleTodo = (todos, id, complete) => {
 	const target = todos.find((todo) => todo.id === id);
