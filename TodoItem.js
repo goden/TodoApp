@@ -54,7 +54,7 @@ class TodoItem extends React.Component {
 				<InputField
 					autoFocus
 					placeholder="編輯待辦事項"
-					defaultValue={this.props.title}
+					value={this.props.title}
 					onBlur={this.toggleEditMode}
 					onKeyDown={(e) => {
 							if (e.keyCode === 27) {
